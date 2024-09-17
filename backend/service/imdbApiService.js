@@ -24,7 +24,7 @@ class ImdbApiService {
               this.fetchMovieList(keyword, 2)
             ]);
         
-            const finalResults = [...firstResults, ...secondResults];
+            const finalResults = [...(firstResults || []), ...(secondResults || [])];
 
             cache.set(keyword, finalResults);
             return finalResults;
@@ -44,7 +44,7 @@ class ImdbApiService {
         console.log(`${this.API_URL}&s=${keyword}&page=${page}`);
         
         const response = await axios.get(`${this.API_URL}&s=${keyword}&page=${page}`);
-        return response.data.Search;
+        return response.data.Search || [];
     };
 }
 

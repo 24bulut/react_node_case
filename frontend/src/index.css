@@ -11,3 +11,75 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px;
+  padding: 20px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  transition: transform 0.2s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.movie-title {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.search-bar {
+  width: 80%;
+  max-width: 500px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-bar:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.search-bar::placeholder {
+  color: #aaa;
+}
+
+
+@media (max-width: 768px) {
+  .movie-grid {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
