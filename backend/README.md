@@ -6,6 +6,10 @@ Service    : service/imdbApiService.js dosyasında imdb apileri ile alaklı işl
 
 Controller : controller/MovieController.js dosyasında servis katmanından aldığım verileri json olarak istemciye dönüyorum.
 
+Extra zamanım olsaydı : 
+- service/imdbApiService.js içerisinde catch içerisinde hata fırlatıyorum. bunu yapmazdım. hatalar global biryerden handle edilip özelleştirilmeli.
+- DTO kullanırdım.
+
 ## API Endpoint'leri
 
 ### `/api/search`
